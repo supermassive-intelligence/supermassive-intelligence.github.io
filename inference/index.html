@@ -169,15 +169,15 @@
 
 <h1 id="inference">Inference</h1>
 <h2 id="openai-compatible-server">OpenAI Compatible Server</h2>
-<pre><code class="language-console">$ curl http://localhost:8000/v1/chat/completions \
-$     -H &quot;Content-Type: application/json&quot; \
-$     -d '{
-$         &quot;model&quot;: &quot;meta-llama/Llama-3.3-70B-Instruct&quot;,
-$         &quot;messages&quot;: [
-$             {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a helpful assistant.&quot;},
-$             {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Who won the world series in 2020?&quot;}
-$         ]
-$     }'
+<pre><code class="language-console">curl https://meta-llama--llama-3-2-3b-instruct.cray-lm.com/v1/chat/completions \
+    -H &quot;Content-Type: application/json&quot; \
+    -d '{
+        &quot;model&quot;: &quot;meta-llama/Llama-3.2-3B-Instruct&quot;,
+        &quot;messages&quot;: [
+            {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a helpful assistant.&quot;},
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Who won the world series in 2020?&quot;}
+        ]
+    }'
 </code></pre>
 <h2 id="using-the-python-client">Using the Python client</h2>
 <p>You can also use the Python client to interact with the Cray server.</p>
