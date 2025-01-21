@@ -193,9 +193,11 @@ lambda ansible_host=...
 <pre><code class="language-bash">git clone git@github.com:cray-lm/cray-lm.git
 cd cray-lm/deployment/helm/lambda
 </code></pre>
-<p>Edit the <code>values.yaml</code> file:
-* set the <code>externalIP</code> address of the Lambda VM, or configure your ingress controller
-* set the <code>model</code> to the huggingface model you want to deploy</p>
+<p>Edit the <code>values.yaml</code> file:</p>
+<ul>
+<li>set the <code>externalIP</code> address of the Lambda VM, or configure your ingress controller</li>
+<li>set the <code>model</code> to the huggingface model you want to deploy</li>
+</ul>
 <p>Then run the following command to deploy Cray:</p>
 <pre><code class="language-bash">helm install cray cray
 </code></pre>
