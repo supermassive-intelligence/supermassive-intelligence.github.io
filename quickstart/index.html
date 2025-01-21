@@ -164,6 +164,16 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#loading-a-different-model" class="nav-link">Loading a different model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#submitting-a-request-to-the-new-model" class="nav-link">Submitting a request to the new model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -171,28 +181,29 @@
 
 <p>Let's start by submitting your first request to Cray.</p>
 <h2 id="setup">Setup</h2>
-<p>Clone the <a href="">Cray repository</a> and start the server.</p>
-<pre><code class="language-console">$ git clone ....
-$ cd cray
-$ ./cray up
+<p>Clone the <a href="https://github.com/cray-lm/cray-lm">Cray-LM repository</a> and start the server.</p>
+<pre><code class="language-console">git clone git@github.com:cray-lm/cray-lm.git
+cd cray-lm
+./cray up
 </code></pre>
-<p>This will bring up the Cray server on <code>localhost:8000</code>, which includes an OpenAI compatible API.</p>
+<p>This will bring up the Cray-LM development server on <code>localhost:8000</code>, which includes an OpenAI compatible API.</p>
 <h2 id="your-first-request">Your first request</h2>
-<pre><code class="language-console">$ curl http://localhost:8000/v1/chat/completions \
-$     -H &quot;Content-Type: application/json&quot; \
-$     -d '{
-$         &quot;model&quot;: &quot;meta-llama/Llama-3.3-70B-Instruct&quot;,
-$         &quot;messages&quot;: [
-$             {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a helpful assistant.&quot;},
-$             {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Who won the world series in 2020?&quot;}
-$         ]
-$     }'
+<pre><code class="language-console">curl http://localhost:8000/v1/openai/chat/completions \
+    -H &quot;Content-Type: application/json&quot; \
+    -d '{
+        &quot;model&quot;: &quot;masint/tiny-random-llama&quot;,
+        &quot;messages&quot;: [
+            {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a helpful assistant.&quot;},
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Who won the world series in 2020?&quot;}
+        ]
+    }'
 </code></pre>
 <h2 id="using-the-python-client">Using the Python client</h2>
-<p>You can also use the Python client to interact with the Cray server.</p>
+<p>You can also use the Python client to interact with the local Cray server.</p>
 <pre><code class="language-python">
 import masint
 
+# Make sure to set the API URL to the local Cray server
 masint.api_url = &quot;http://localhost:8000&quot;
 
 def get_dataset():
@@ -213,6 +224,24 @@ dataset = get_dataset()
 results = llm.generate(prompts=dataset)
 
 print(results)
+</code></pre>
+<h1 id="loading-a-different-model">Loading a different model</h1>
+<p>Edit the file cray-lm/infra/cray_infra/util/default_config.py and change the <code>model</code> field to the desired model.</p>
+<pre><code class="language-python">model = &quot;meta-llama/Llama-3.2-1B-Instruct&quot;
+</code></pre>
+<p>Then restart the server.</p>
+<pre><code class="language-console">./cray up
+</code></pre>
+<h1 id="submitting-a-request-to-the-new-model">Submitting a request to the new model</h1>
+<pre><code class="language-console">curl http://localhost:8000/v1/openai/chat/completions \
+    -H &quot;Content-Type: application/json&quot; \
+    -d '{
+        &quot;model&quot;: &quot;meta-llama/Llama-3.2-1B-Instruct&quot;,
+        &quot;messages&quot;: [
+            {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a helpful assistant.&quot;},
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Who won the world series in 2020?&quot;}
+        ]
+    }'
 </code></pre></div>
             </div>
         </div>
