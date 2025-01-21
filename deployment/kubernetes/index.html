@@ -152,6 +152,18 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#kubernetes-deployment" class="nav-link">Kubernetes Deployment</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#deploy-cray" class="nav-link">Deploy Cray</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#verify-the-deployment" class="nav-link">Verify the Deployment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -161,9 +173,39 @@
 
 <h1 id="kubernetes-deployment">Kubernetes Deployment</h1>
 <p>Cray can be deployed on Kubernetes. This guide will walk you through the steps to deploy Cray on Kubernetes.</p>
-<p>Clone the <a href="">Cray repository</a> and start the server.</p>
-<pre><code class="language-console">$ git clone ....
-$ cd cray
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Make sure you have a kubernetes cluster running. You can set one up yourself or use a
+managed service like GKE or AKS.</p>
+<p>You can also use the provided Ansible recipe
+to install Kubernetes on a Lambda VM running Ubuntu 22.04. The recipe is available at
+<a href="https://github.com/cray-lm/cray-lm/deployment/ansible/k8.yml">Ansible Kubernetes</a>.</p>
+<p>If you check out the repository on the server, you can run the playbook with the
+following command:</p>
+<pre><code class="language-bash">ansible-playbook -i hosts -v k8.yml
+</code></pre>
+<p>The ansible playbook is a list of tasks that will install Kubernetes on the Lambda VM. You can inspect the playbook to see what it does and modify it to suit your needs.</p>
+<p>It is also possible to run the playbook on a remote server by setting up the SSH connection in the <code>hosts</code> file.</p>
+<pre><code class="language-bash">[all]
+lambda ansible_host=...
+</code></pre>
+<h2 id="deploy-cray">Deploy Cray</h2>
+<p>To deploy Cray on Kubernetes, you need to clone the Cray repository and run the following command:</p>
+<pre><code class="language-bash">git clone git@github.com:cray-lm/cray-lm.git
+cd cray-lm/deployment/helm/lambda
+</code></pre>
+<p>Edit the <code>values.yaml</code> file:
+* set the <code>externalIP</code> address of the Lambda VM, or configure your ingress controller
+* set the <code>model</code> to the huggingface model you want to deploy</p>
+<p>Then run the following command to deploy Cray:</p>
+<pre><code class="language-bash">helm install cray cray
+</code></pre>
+<h2 id="verify-the-deployment">Verify the Deployment</h2>
+<p>To verify the deployment, you can run the following command:</p>
+<pre><code class="language-bash">kubectl get pods
+</code></pre>
+<p>You should see the Cray pod running.</p>
+<p>You can get the logs of the pod by running:</p>
+<pre><code class="language-bash">kubectl logs cray-...
 </code></pre></div>
             </div>
         </div>
