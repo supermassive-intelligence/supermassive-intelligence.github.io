@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Quick Start - Cray-LM Docs</title>
+        <title>Quick Start - Craylm Docs</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">Cray-LM Docs</a>
+                <a class="navbar-brand" href="..">Craylm Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -183,14 +183,14 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Let's start by submitting your first request to Cray.</p>
+<p>Let's start by submitting your first request to Craylm.</p>
 <h2 id="setup">Setup</h2>
-<p>Clone the <a href="https://github.com/cray-lm/cray-lm">Cray-LM repository</a> and start the server.</p>
+<p>Clone the <a href="https://github.com/cray-lm/cray-lm">Craylm repository</a> and start the server.</p>
 <pre><code>git clone git@github.com:cray-lm/cray-lm.git
 cd cray-lm
 ./cray up
 </code></pre>
-<p>This will bring up the Cray-LM development server on <code>localhost:8000</code>, which includes an OpenAI compatible API.</p>
+<p>This will bring up the Craylm development server on <code>localhost:8000</code>, which includes an OpenAI compatible API.</p>
 <h2 id="your-first-request">Your first request</h2>
 <pre><code class="language-console">curl http://localhost:8000/v1/openai/chat/completions \
     -H &quot;Content-Type: application/json&quot; \
@@ -203,11 +203,11 @@ cd cray-lm
     }'
 </code></pre>
 <h2 id="using-the-python-client">Using the Python client</h2>
-<p>You can also use the Python client to interact with the local Cray server.</p>
+<p>You can also use the Python client to interact with the local Craylm server.</p>
 <pre><code class="language-python">
 import masint
 
-# Make sure to set the API URL to the local Cray server
+# Make sure to set the API URL to the local Craylm server
 masint.api_url = &quot;http://localhost:8000&quot;
 
 def get_dataset():

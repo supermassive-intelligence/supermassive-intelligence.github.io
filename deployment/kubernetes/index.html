@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Kubernetes - Cray-LM Docs</title>
+        <title>Kubernetes - Craylm Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">Cray-LM Docs</a>
+                <a class="navbar-brand" href="../..">Craylm Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -160,7 +160,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#deploy-cray" class="nav-link">Deploy Cray</a>
+            <li class="nav-item" data-bs-level="2"><a href="#deploy-craylm" class="nav-link">Deploy Craylm</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -176,7 +176,7 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="kubernetes-deployment">Kubernetes Deployment</h1>
-<p>Cray can be deployed on Kubernetes. This guide will walk you through the steps to deploy Cray on Kubernetes.</p>
+<p>Craylm can be deployed on Kubernetes. This guide will walk you through the steps to deploy Cray on Kubernetes.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Make sure you have a kubernetes cluster running. You can set one up yourself or use a
 managed service like GKE or AKS.</p>
@@ -192,8 +192,8 @@ following command:</p>
 <pre><code class="language-bash">[all]
 lambda ansible_host=...
 </code></pre>
-<h2 id="deploy-cray">Deploy Cray</h2>
-<p>To deploy Cray on Kubernetes, you need to clone the Cray repository and run the following command:</p>
+<h2 id="deploy-craylm">Deploy Craylm</h2>
+<p>To deploy Craylm on Kubernetes, you need to clone the Cray repository and run the following command:</p>
 <pre><code class="language-bash">git clone git@github.com:cray-lm/cray-lm.git
 cd cray-lm/deployment/helm/lambda
 </code></pre>
@@ -202,14 +202,14 @@ cd cray-lm/deployment/helm/lambda
 <li>set the <code>externalIP</code> address of the Lambda VM, or configure your ingress controller</li>
 <li>set the <code>model</code> to the huggingface model you want to deploy</li>
 </ul>
-<p>Then run the following command to deploy Cray:</p>
+<p>Then run the following command to deploy Craylm:</p>
 <pre><code class="language-bash">helm install cray cray
 </code></pre>
 <h2 id="verify-the-deployment">Verify the Deployment</h2>
 <p>To verify the deployment, you can run the following command:</p>
 <pre><code class="language-bash">kubectl get pods
 </code></pre>
-<p>You should see the Cray pod running.</p>
+<p>You should see the Craylm pod running.</p>
 <p>You can get the logs of the pod by running:</p>
 <pre><code class="language-bash">kubectl logs cray-...
 </code></pre></div>

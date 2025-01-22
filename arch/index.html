@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Architecture - Cray-LM Docs</title>
+        <title>Architecture - Craylm Docs</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">Cray-LM Docs</a>
+                <a class="navbar-brand" href="..">Craylm Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -154,7 +154,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#cray" class="nav-link">Cray</a>
+            <li class="nav-item" data-bs-level="1"><a href="#craylm" class="nav-link">Craylm</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -163,14 +163,14 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="cray">Cray</h1>
-<p>Cray has three high level APIs:</p>
+<h1 id="craylm">Craylm</h1>
+<p>Craylm has three high level APIs:</p>
 <ul>
 <li><strong>completions</strong> provides OpenAI client compatibility</li>
 <li><strong>generate</strong> provides a simple interface for generating text</li>
 <li><strong>train</strong> provides a simple interface for submitting training jobs</li>
 </ul>
-<p><img alt="Cray overview" src="../assets/cray-arch.png" /></p>
+<p><img alt="Craylm overview" src="../assets/cray-arch.png" /></p>
 <p>Inference is performed by vLLM workers that are orchestrated by pulling requests from a queue.</p>
 <p>Training is performed by Megatron-LM workers that are orchestrated by SLURM.</p>
 <p>Trained models are automatically registered with the inference workers.</p></div>
