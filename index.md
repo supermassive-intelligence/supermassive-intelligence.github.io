@@ -1,8 +1,11 @@
+This is a personal blog to share my thoughts about high performance computing and machine learning.
 
-= MasInt =
-== A new computer designed to run emerging supermassive superintelligences ==
 
-MasInt is founded to build supercomputers that are optimized for emerging superintelligent AIs. MasInt founders are former NVIDIA employees who worked on CUDA and Cutlass. We believe that it is possible for AIs to learn faster than scaling laws by taking advantage of emerging memory technologies. MasInt phase 1 will build a prototype of a computer combining GPUs with high capacity and high bandwidth LPDDR and 3D-NAND memories to show that it is possible to significantly increase accuracy for complex engineering applications including operating system driver development, relational data analytics, and machine learning systems.
+<div class="infobox">
+    <h1>MasInt</h1>
+    <h2>A new computer designed to run emerging supermassive superintelligences</h2>
+    <p>MasInt is founded to build supercomputers that are optimized for emerging superintelligent AIs. MasInt founders are former NVIDIA employees who worked on CUDA and Cutlass. We believe that it is possible for AIs to learn faster than scaling laws by taking advantage of emerging memory technologies. MasInt phase 1 will build a prototype of a computer combining GPUs with high capacity and high bandwidth LPDDR and 3D-NAND memories to show that it is possible to significantly increase accuracy for complex engineering applications including operating system driver development, relational data analytics, and machine learning systems.</p>
+</div>
 
 <canvas id="canvas"></canvas>
 
@@ -19,7 +22,7 @@ MasInt is founded to build supercomputers that are optimized for emerging superi
 
     // Set canvas dimensions
     canvas.width = window.innerWidth * 0.5;
-    canvas.height = window.innerHeight * 0.5;
+    canvas.height = window.innerHeight * 0.7;
 
     // Simulation parameters
     let blackHoleRadius = 30;
@@ -274,7 +277,7 @@ MasInt is founded to build supercomputers that are optimized for emerging superi
     // Handle window resize
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth * 0.5;
-        canvas.height = window.innerHeight * 0.5;
+        canvas.height = window.innerHeight * 0.7;
         resetSimulation();
     });
 
