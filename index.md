@@ -1,6 +1,3 @@
-This is a personal blog to share my thoughts about high performance computing and machine learning.
-
-
 <div class="infobox">
     <h1>MasInt</h1>
     <h2>A new computer designed to run emerging supermassive superintelligences</h2>
