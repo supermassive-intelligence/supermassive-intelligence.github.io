@@ -85,9 +85,8 @@ button:hover, .blog-button:hover {
 .blog-button:hover {
     background-color: #2a8ad4;
 }
-.info {
+.infobox {
     font-size: 14px;
-    max-width: 300px;
 }
 h1 {
     font-size: 32px;
