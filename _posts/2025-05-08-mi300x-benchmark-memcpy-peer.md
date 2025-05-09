@@ -62,7 +62,9 @@ The performance characteristics demonstrated in these benchmarks validate AMD's 
 ![Memcpy Peer Benchmark](/images/mi300x-memcpy-peer-mpi-benchmark.png)
 
 This benchmark demonstrates the bandwidth performance of AMD's MI300X GPU using MPI_Send and MPI_Recv operations across a 50 GB/s Infinity Fabric link. The data reveals several important performance characteristics that would be relevant to HPC system architects.
+
 The graph shows a clear bandwidth saturation pattern. For small data transfers (below 10MB), the achieved bandwidth is significantly lower than the theoretical maximum of 50 GB/s. However, as data size increases beyond 10MB, the bandwidth approaches and eventually reaches the theoretical roofline of 50 GB/s. This indicates that the MI300X requires larger message sizes to efficiently utilize the full bandwidth capacity of the Infinity link, which is typical of high-performance interconnects where protocol overhead dominates with smaller transfers.
+
 What's particularly notable is the steep bandwidth curve between 1-10MB message sizes, where performance rapidly improves from approximately 12 GB/s to nearly 40 GB/s. Beyond 16.8MB (represented by the green diamond), almost all data points cluster near the 50 GB/s roofline, showing that the system efficiently utilizes the available bandwidth for larger data transfers. The largest tested size of 1.1GB achieves essentially full utilization of the link.
 
 Key Insights:
@@ -218,3 +220,7 @@ def get_device():
 ```
 
 ## MPI Benchmark Code
+
+You can find the MPI benchmark code on [Github](https://github.com/tensorwavecloud/ScalarLM/blob/main/test/infra/distribution_strategy/benchmark_mpi_sendrecv.py).
+
+
