@@ -64,13 +64,14 @@ The performance characteristics demonstrated in these benchmarks validate AMD's 
 This benchmark demonstrates the bandwidth performance of AMD's MI300X GPU using MPI_Send and MPI_Recv operations across a 50 GB/s Infinity Fabric link. The data reveals several important performance characteristics that would be relevant to HPC system architects.
 The graph shows a clear bandwidth saturation pattern. For small data transfers (below 10MB), the achieved bandwidth is significantly lower than the theoretical maximum of 50 GB/s. However, as data size increases beyond 10MB, the bandwidth approaches and eventually reaches the theoretical roofline of 50 GB/s. This indicates that the MI300X requires larger message sizes to efficiently utilize the full bandwidth capacity of the Infinity link, which is typical of high-performance interconnects where protocol overhead dominates with smaller transfers.
 What's particularly notable is the steep bandwidth curve between 1-10MB message sizes, where performance rapidly improves from approximately 12 GB/s to nearly 40 GB/s. Beyond 16.8MB (represented by the green diamond), almost all data points cluster near the 50 GB/s roofline, showing that the system efficiently utilizes the available bandwidth for larger data transfers. The largest tested size of 1.1GB achieves essentially full utilization of the link.
+
 Key Insights:
 
-Bandwidth Saturation Point: The MI300X requires approximately 16.8MB message size to reach ~80% of theoretical bandwidth, and 33.6MB to achieve >90% utilization of the Infinity link.
-Small Message Inefficiency: Transfers below 4.2MB achieve less than 50% of the theoretical bandwidth, with the smallest sizes (4.1kB) managing only about 4% utilization. This highlights the significant protocol overhead for small transfers.
-Logarithmic Scaling: The consistent improvement across logarithmic increases in data size suggests well-designed network protocols that efficiently handle varying workloads.
-Practical Performance Threshold: HPC applications should batch communications to exceed 16.8MB when possible to maximize bandwidth utilization on the MI300X.
-Interconnect Ceiling: The hard limit at 50 GB/s confirms that the single Infinity link is the bottleneck rather than the GPU memory subsystem, suggesting that multi-link configurations would be beneficial for bandwidth-sensitive applications.
+* Bandwidth Saturation Point: The MI300X requires approximately 16.8MB message size to reach ~80% of theoretical bandwidth, and 33.6MB to achieve >90% utilization of the Infinity link.
+* Small Message Inefficiency: Transfers below 4.2MB achieve less than 50% of the theoretical bandwidth, with the smallest sizes (4.1kB) managing only about 4% utilization. This highlights the significant protocol overhead for small transfers.
+* Logarithmic Scaling: The consistent improvement across logarithmic increases in data size suggests well-designed network protocols that efficiently handle varying workloads.
+* Practical Performance Threshold: HPC applications should batch communications to exceed 16.8MB when possible to maximize bandwidth utilization on the MI300X.
+* Interconnect Ceiling: The hard limit at 50 GB/s confirms that the single Infinity link is the bottleneck rather than the GPU memory subsystem, suggesting that multi-link configurations would be beneficial for bandwidth-sensitive applications.
 
 These benchmark results provide valuable guidance for HPC developers optimizing communication patterns on MI300X-based systems, particularly highlighting the importance of message size on achievable performance when using MPI point-to-point operations.
 
