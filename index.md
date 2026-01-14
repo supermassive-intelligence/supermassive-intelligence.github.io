@@ -1,7 +1,8 @@
 <div class="infobox">
-    <h1>MasInt</h1>
+    <h1>Massin</h1>
     <h2>is a new computer designed to run emerging supermassive superintelligences</h2>
-    <p>MasInt is founded to build supercomputers that accelerate emerging superintelligent AIs. MasInt founders are former NVIDIA employees who worked on CUDA and Cutlass. We believe that it is possible for AIs to learn faster than scaling laws by taking advantage of emerging memory technologies. MasInt phase 1 will build a prototype of a computer combining GPUs with high capacity and high bandwidth LPDDR and 3D-NAND memories to show that it is possible to significantly increase accuracy for complex engineering applications including operating system driver development, relational data analytics, and machine learning systems.</p>
+    <p>Massin is researching superintelligence alignment in stealth. To access our technology preview contact relational.ai . </p>
+    <p>To invest in or join massin, contact Greg Diamos </p>
 </div>
 
 <!-- Generate random stars -->
