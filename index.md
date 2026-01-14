@@ -1,8 +1,8 @@
 <div class="infobox">
-    <h1>Massin</h1>
+    <h1>XXXXXX</h1>
     <h2>is a new computer designed to run emerging supermassive superintelligences</h2>
-    <p>Massin is researching superintelligence alignment in stealth. To access our technology preview contact relational.ai . </p>
-    <p>To invest in or join massin, contact Greg Diamos </p>
+    <p>XXXXXXX is researching superintelligence alignment in stealth. To access our technology preview contact relational.ai . </p>
+    <p>To invest in or join XXXXXXX, contact Greg Diamos </p>
 </div>
 
 <!-- Generate random stars -->
